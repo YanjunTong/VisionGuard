@@ -5,6 +5,7 @@ VisionGurd
 [简体中文](../README_CN.md) | English
 
 A multimodal learning-based video anomaly detection system, specifically optimized for vehicle collision detection, supporting recognition and localization of various abnormal events.
+![framework](./src/framework.png "framework")
 
 Features
 

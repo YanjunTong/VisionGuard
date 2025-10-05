@@ -4,6 +4,7 @@
 [English](./src/README_EN.md) | 简体中文
 
 一个基于多模态学习的视频异常事件检测系统，专门针对车辆碰撞检测优化，支持多种异常事件的识别和定位。
+![framework](./src/framework.png "framework")
 
 ## 特性
 
