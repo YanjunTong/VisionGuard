@@ -1,10 +1,8 @@
-```
 # 视频异常事件检测系统
 
 [English](./src/README_EN.md) | 简体中文
 
-一个基于多模态学习的视频异常事件检测系统，专门针对车辆碰撞检测优化，支持多种异常事件的识别和定位。
-![framework](./src/framework.png "framework")
+**一个基于多模态学习的视频异常事件检测系统，专门针对车辆碰撞检测优化，支持多种异常事件的识别和定位。**
 
 ## 特性
 
@@ -31,40 +29,41 @@
 ## 安装
 
 1. 克隆仓库：
-```bash
-git clone https://github.com/YanjunTong/VisionGuard.git
-cd VisionGuard
-```
+   
+   ```bash
+   git clone https://github.com/YanjunTong/VisionGuard.git
+   cd VisionGuard
+   ```
 
-1. 安装依赖：
+2. 安装依赖：
+   
+   ```bash
+   pip install torch torchvision
+   pip install opencv-python pillow clip-by-openai
+   pip install numpy tqdm
+   ```
 
-```bash
-pip install torch torchvision
-pip install opencv-python pillow clip-by-openai
-pip install numpy tqdm
-```
+## 快速开始
 
-快速开始
-
-数据预处理
+1. **数据预处理**
 
 ```bash
 python process.py
 ```
 
-模型训练
+2. **模型训练**
 
 ```bash
 python train.py
 ```
 
-推理检测
+2. **推理检测**
 
 ```bash
 python inference.py
 ```
 
-项目结构
+## 项目结构
 
 ```
 video-anomaly-detection/
@@ -80,13 +79,13 @@ video-anomaly-detection/
 └── README.md
 ```
 
-数据准备
+## 数据准备
 
-视频数据
+1. **视频数据**
 
 将训练视频放置在 train_videos/ 目录下，测试视频放置在 video/ 目录下。
 
-文本描述
+2. **文本描述**
 
 在 process.py 中配置视频对应的文本描述：
 
@@ -97,7 +96,7 @@ TEST_TEXT_DESC_DICT = {
 }
 ```
 
-模型架构
+## 模型架构
 
 系统采用三头网络结构：
 
@@ -105,19 +104,20 @@ TEST_TEXT_DESC_DICT = {
 · 异常检测头: 二分类判断是否异常
 · 事件分类头: 多分类识别事件类型
 · 时间定位头: 回归预测事件时间偏移
+![framework](./src/framework.png "framework")
 
-结果输出
+## 结果输出
 
-推理结果保存在 submission.txt 中，格式为：
+**推理结果保存在 submission.txt 中，格式为：**
 
 ```
 视频ID 起始帧 结束帧 事件类型
 示例: car_01 125 189 车辆碰撞
 ```
 
-训练配置
+## 训练配置
 
-关键训练参数：
+**关键训练参数：**
 
 · 批大小: 32
 · 学习率: 1e-4
@@ -125,36 +125,43 @@ TEST_TEXT_DESC_DICT = {
 · 帧数/片段: 16
 · 滑动步长: 8
 
-性能优化
+## 性能优化
 
 · 使用CLIP ViT-B/32模型平衡精度与速度
 · 滑动窗口策略避免漏检
 · 特征预计算加速训练过程
 
-许可证
+**许可证**
 
-MIT License
+[MIT License](https://mit-license.org/)
 
-引用
+**引用**
 
 如果您使用了本项目，请引用：
 
 ```bibtex
-@software{VideoAnomalyDetection2024,
+@software{VisionGuard2025,
   title = {VisionGuard},
   author = {Tong, Yanjun and Liang, Tianyv},
   year = {2025},
   url = {https://github.com/YanjunTong/VisionGuard}
 }
+
+@inproceedings{CLIP,
+  title = {Learning Transferable Visual Models From Natural Language Supervision},
+  author = {Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and others},
+  booktitle = {International Conference on Machine Learning},
+  pages = {8748--8763},
+  year = {2021},
+  organization = {PMLR}
+}
 ```
 
-贡献
+**贡献**
 
 欢迎提交 Issue 和 Pull Request！
 
-联系方式
+**联系方式**
 
 · 邮箱: yanjun_tong@outlook.com
 · GitHub: @yanjuntong
-
-```
