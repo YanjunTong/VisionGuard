@@ -101,8 +101,11 @@ TEST_TEXT_DESC_DICT = {
 系统采用三头网络结构：
 
 · 融合模块: CLIP特征 + 注意力机制
+
 · 异常检测头: 二分类判断是否异常
+
 · 事件分类头: 多分类识别事件类型
+
 · 时间定位头: 回归预测事件时间偏移
 ![framework](./src/framework.png "framework")
 
