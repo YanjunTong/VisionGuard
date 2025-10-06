@@ -28,14 +28,14 @@
 
 ## 安装
 
-1. 克隆仓库：
+1. **克隆仓库**：
    
    ```bash
    git clone https://github.com/YanjunTong/VisionGuard.git
    cd VisionGuard
    ```
 
-2. 安装依赖：
+2. **安装依赖**：
    
    ```bash
    pip install torch torchvision
