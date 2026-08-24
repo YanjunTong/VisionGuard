@@ -1,3 +1,5 @@
+
+
 # 视频异常事件检测系统
 
 [English](./src/README_EN.md) | 简体中文
@@ -57,7 +59,7 @@ python process.py
 python train.py
 ```
 
-2. **推理检测**
+3. **推理检测**
 
 ```bash
 python inference.py
